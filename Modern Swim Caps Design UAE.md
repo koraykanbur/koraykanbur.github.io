@@ -23,7 +23,3 @@ A modern, minimalistic website for Streamline, a brand selling custom swim caps 
 - CSS3 (with CSS Variables)
 - Vanilla JavaScript (for simple interactions)
 - Google Fonts (Inter)
-
-## Setup Instructions
-
-1. Clone the repository:
