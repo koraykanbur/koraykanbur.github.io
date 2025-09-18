@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding File Directory Structure</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: #0A1D37;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .explanation {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #1E4A76;
+        }
+        
+        .folder-structure {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+        
+        .file {
+            margin-left: 20px;
+            color: #3498db;
+        }
+        
+        .folder {
+            color: #f1c40f;
+            font-weight: bold;
+        }
+        
+        .screenshot {
+            background: #34495e;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            color: white;
+        }
+        
+        .screenshot-img {
+            width: 100%;
+            background: #1e2a38;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .step-box {
+            background: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        .step-number {
+            background: #3498db;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+        }
+        
+        .notes {
+            background: #fff4e6;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #ffa94d;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #0A1D37;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 0 10px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Understanding File Directory Structure</h1>
+            <p>What "Place Files in the Same Directory" Means</p>
+        </header>
+        
+        <div class="content">
+            <div class="explanation">
+                <h2>Directory Basics</h2>
+                <p>A "directory" is simply another word for a <strong>folder</strong> on your computer. When we say "place all the favicon files in the same directory as your HTML file," we mean you should put these files in the <strong>same folder</strong> where your website's main HTML file is located.</p>
+            </div>
+            
+            <div class="folder-structure">
+                <span class="folder">streamline-website/</span><br>
+                <span class="file">index.html</span> (your main HTML file)<br>
+                <span class="file">favicon.ico</span> (the favicon file)<br>
+                <span class="file">favicon-32x32.png</span><br>
+                <span class="file">favicon-16x16.png</span><br>
+                <span class="file">apple-touch-icon.png</span><br>
+                <span class="file">site.webmanifest</span><br>
+                <span class="folder">images/</span> (folder for other images)<br>
+                <span class="folder">css/</span> (folder for stylesheets)<br>
+                <span class="folder">js/</span> (folder for JavaScript files)
+            </div>
+            
+            <div class="step-box">
+                <h3><span class="step-number">1</span>Download Your Favicon Files</h3>
+                <p>After generating your favicon files using a tool like <a href="https://realfavicongenerator.net/" target="_blank">RealFaviconGenerator</a>, you'll download a ZIP file containing all the necessary files.</p>
+            </div>
+            
+            <div class="step-box">
+                <h3><span class="step-number">2</span>Extract the Files</h3>
+                <p>Unzip the downloaded file to access all the favicon files inside.</p>
+            </div>
+            
+            <div class="step-box">
+                <h3><span class="step-number">3</span>Locate Your Website Folder</h3>
+                <p>Find the folder on your computer where your website files are stored. This is where your <code>index.html</code> file is located.</p>
+            </div>
+            
+            <div class="step-box">
+                <h3><span class="step-number">4</span>Copy Favicon Files</h3>
+                <p>Copy all the favicon files from the extracted folder and paste them into your website folder alongside your HTML file.</p>
+            </div>
+            
+            <div class="screenshot">
+                <h3>What It Looks Like in File Explorer</h3>
+                <div class="screenshot-img">
+                    <span style="color: #f1c40f;">📁 streamline-website</span><br>
+                    &nbsp;&nbsp;├── <span style="color: #3498db;">📄 index.html</span><br>
+                    &nbsp;&nbsp;├── <span style="color: #3498db;">📄 favicon.ico</span><br>
+                    &nbsp;&nbsp;├── <span style="color: #3498db;">📄 favicon-16x16.png</span><br>
+                    &nbsp;&nbsp;├── <span style="color: #3498db;">📄 favicon-32x32.png</span><br>
+                    &nbsp;&nbsp;├── <span style="color: #3498db;">📄 apple-touch-icon.png</span><br>
+                    &nbsp;&nbsp;├── <span style="color: #3498db;">📄 site.webmanifest</span><br>
+                    &nbsp;&nbsp;├── <span style="color: #f1c40f;">📁 images</span><br>
+                    &nbsp;&nbsp;├── <span style="color: #f1c40f;">📁 css</span><br>
+                    &nbsp;&nbsp;└── <span style="color: #f1c40f;">📁 js</span>
+                </div>
+            </div>
+            
+            <div class="notes">
+                <h3>Important Notes</h3>
+                <ul>
+                    <li>All these files must be in the <strong>same folder</strong> as your HTML file</li>
+                    <li>The file names must <strong>exactly match</strong> what's in the HTML code</li>
+                    <li>If you upload your website to a server, you must upload <strong>all</strong> these files</li>
+                    <li>After adding the files, you may need to <strong>clear your browser cache</strong> to see the favicon</li>
+                </ul>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Streamline Custom Swim Caps &copy; 2023</p>
+        </footer>
+    </div>
+</body>
+</html>
