@@ -3,16 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Streamline | Premium Custom Swim Caps</title>
+    <title>Streamline | Premium Custom Swim Caps in UAE</title>
+    <meta name="description" content="Custom swim caps for teams and individuals in UAE. Premium quality, fully customizable designs with fast turnaround. Dubai, Abu Dhabi, Sharjah.">
+    <meta name="keywords" content="custom swim caps, UAE swim teams, swimming accessories, personalized swim caps, Dubai swim gear">
+    <meta name="author" content="Streamline">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.streamline.ae/">
+    <meta property="og:title" content="Streamline | Premium Custom Swim Caps in UAE">
+    <meta property="og:description" content="Custom swim caps for teams and individuals in UAE. Premium quality silicone caps with team branding.">
+    <meta property="og:image" content="https://www.streamline.ae/images/social-preview.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.streamline.ae/">
+    <meta property="twitter:title" content="Streamline | Premium Custom Swim Caps in UAE">
+    <meta property="twitter:description" content="Custom swim caps for teams and individuals in UAE.">
+    <meta property="twitter:image" content="https://www.streamline.ae/images/social-preview.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsActivityLocation",
+      "name": "Streamline Custom Swim Caps",
+      "image": "https://www.streamline.ae/images/logo.jpg",
+      "@id": "https://www.streamline.ae",
+      "url": "https://www.streamline.ae",
+      "telephone": "+97142123456",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Business Bay",
+        "addressLocality": "Dubai",
+        "addressCountry": "UAE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 25.186111,
+        "longitude": 55.276665
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      } 
+    }
+    </script>
+    
     <style>
         :root {
             --color-black: #000000;
             --color-white: #FFFFFF;
             --color-navy: #0A1D37;
             --color-accent: #1E4A76;
+            --color-menu: #142a4e; /* New menu color */
             --spacing-xs: 0.5rem;
             --spacing-sm: 1rem;
             --spacing-md: 2rem;
@@ -58,16 +119,11 @@
             margin: 0 auto;
         }
 
-        /* Header */
+        /* Header - Fixed to be static (not sticky) */
         header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: var(--color-white);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            z-index: 1000;
+            background-color: var(--color-menu);
             padding: var(--spacing-sm) 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .header-container {
@@ -79,27 +135,30 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--color-navy);
+            color: var(--color-white);
         }
 
         .nav-menu {
             display: flex;
+            align-items: center;
             gap: var(--spacing-md);
         }
 
         .nav-link {
             font-weight: 500;
             position: relative;
+            color: var(--color-white);
+            padding: 0.5rem 0;
         }
 
         .nav-link::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: 0;
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--color-navy);
+            background-color: var(--color-white);
             transition: var(--transition);
         }
 
@@ -108,8 +167,8 @@
         }
 
         .cta-button {
-            background-color: var(--color-navy);
-            color: var(--color-white);
+            background-color: var(--color-white);
+            color: var(--color-menu);
             padding: 0.6rem 1.5rem;
             border-radius: var(--border-radius);
             font-weight: 500;
@@ -118,6 +177,7 @@
 
         .cta-button:hover {
             background-color: var(--color-accent);
+            color: var(--color-white);
             transform: translateY(-2px);
         }
 
@@ -278,6 +338,46 @@
             color: var(--color-navy);
         }
 
+        /* Testimonials */
+        .testimonials {
+            padding: var(--spacing-xl) 0;
+            background-color: var(--color-white);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+        }
+        
+        .testimonial-card {
+            background-color: #f8f9fa;
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--color-navy);
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            margin-bottom: var(--spacing-sm);
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--color-navy);
+        }
+
         /* CTA Section */
         .cta-section {
             padding: var(--spacing-xl) 0;
@@ -361,6 +461,38 @@
             padding-top: var(--spacing-md);
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
+        
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: var(--spacing-md);
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+        }
+        
+        .form-group {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 500;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: inherit;
+        }
+        
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
 
         /* Animations */
         @keyframes fadeInUp {
@@ -378,18 +510,26 @@
             }
             
             .features-grid,
-            .products-grid {
+            .products-grid,
+            .testimonial-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             
             .footer-container {
                 grid-template-columns: repeat(2, 1fr);
             }
+            
+            .nav-menu {
+                flex-direction: column;
+                gap: var(--spacing-sm);
+                align-items: flex-start;
+            }
         }
 
         @media (max-width: 576px) {
             .features-grid,
-            .products-grid {
+            .products-grid,
+            .testimonial-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -401,28 +541,43 @@
                 font-size: 2.5rem;
             }
             
+            .header-container {
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+            
             .nav-menu {
-                display: none;
+                width: 100%;
+                align-items: center;
             }
         }
     </style>
+    
+    <!-- Google Analytics placeholder (replace with your ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header - Now static with different color -->
     <header>
         <div class="container header-container">
             <a href="#" class="logo">Streamline</a>
             <nav>
                 <ul class="nav-menu">
                     <li><a href="#" class="nav-link">Home</a></li>
-                    <li><a href="#" class="nav-link">Products</a></li>
-                    <li><a href="#" class="nav-link">Customization</a></li>
-                    <li><a href="#" class="nav-link">Teams</a></li>
-                    <li><a href="#" class="nav-link">About</a></li>
-                    <li><a href="#" class="nav-link">Contact</a></li>
+                    <li><a href="#products" class="nav-link">Products</a></li>
+                    <li><a href="#customization" class="nav-link">Customization</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
-            <a href="#" class="cta-button">Order Now</a>
+            <a href="#contact" class="cta-button">Order Now</a>
         </div>
     </header>
 
@@ -431,11 +586,11 @@
         <div class="container hero-content">
             <div class="hero-text">
                 <h1 class="hero-title">Elevate Your Swim Experience with Custom Caps</h1>
-                <p class="hero-subtitle">Premium quality, fully customizable swim caps for teams and individuals across the UAE.</p>
-                <a href="#" class="cta-button">Explore Collections</a>
+                <p class="hero-subtitle">Premium quality, fully customizable swim caps for teams and individuals across the UAE. Perfect for swim clubs, competitions, and training.</p>
+                <a href="#products" class="cta-button">Explore Collections</a>
             </div>
             <div class="hero-image">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjFmNWY5Ii8+PGNpcmNsZSBjeD0iMzAwIiBjeT0iMjUwIiByPSIxMDAiIGZpbGw9IiMwQTFEMzciLz48dGV4dCB4PSIzMDAiIHk9IjI1MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjRkZGRkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+U1RSRUFNTElORTwvdGV4dD48L3N2Zz4=" alt="Streamline Custom Swim Cap">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjFmNWY5Ii8+PGNpcmNsZSBjeD0iMzAwIiBjeT0iMjUwIiByPSIxMDAiIGZpbGw9IiMwQTFEMzciLz48dGV4dCB4PSIzMDAiIHk9IjI1MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjRkZGRkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+U1RSRUFNTElORTwvdGV4dD48L3N2Zz4=" alt="Streamline Custom Swim Cap - Premium silicone swim caps in UAE">
             </div>
         </div>
     </section>
@@ -448,53 +603,74 @@
                 <div class="feature-card">
                     <div class="feature-icon">✓</div>
                     <h3 class="feature-title">Premium Materials</h3>
-                    <p>Made from high-quality silicone for durability and comfort.</p>
+                    <p>Made from high-quality silicone for durability and comfort. Perfect for competitive swimmers and teams in Dubai, Abu Dhabi, and across UAE.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🎨</div>
                     <h3 class="feature-title">Fully Customizable</h3>
-                    <p>Design your own caps with logos, colors, and text.</p>
+                    <p>Design your own caps with logos, colors, and text. Perfect for swim teams, clubs, and events throughout the United Arab Emirates.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🚀</div>
                     <h3 class="feature-title">Fast Turnaround</h3>
-                    <p>Quick production and delivery across the UAE.</p>
+                    <p>Quick production and delivery across the UAE. We serve Dubai, Abu Dhabi, Sharjah, and all Emirates with reliable shipping.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Products Section -->
-    <section class="products">
+    <section id="products" class="products">
         <div class="container">
             <h2 class="section-title">Our Collections</h2>
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMUI0QTc2Ii8+PGNpcmNsZSBjeD0iMTUwIiBjeT0iMTUwIiByPSI3MCIgZmlsbD0iI0ZGRkZGRiIvPjwvc3ZnPg==" alt="Team Swim Caps">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMUI0QTc2Ii8+PGNpcmNsZSBjeD0iMTUwIiBjeT0iMTUwIiByPSI3MCIgZmlsbD0iI0ZGRkZGRiIvPjwvc3ZnPg==" alt="Team Swim Caps - Custom swim team caps UAE">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">Team Caps</h3>
-                        <p>Custom designs for swim teams and clubs.</p>
+                        <p>Custom designs for swim teams and clubs across UAE. Perfect for schools, competitions, and swim clubs in Dubai and Abu Dhabi.</p>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRkZGRkZGIi8+PGNpcmNsZSBjeD0iMTUwIiBjeT0iMTUwIiByPSI3MCIgZmlsbD0iIzBCMUQzNyIvPjwvc3ZnPg==" alt="Competition Swim Caps">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRkZGRkZGIi8+PGNpcmNsZSBjeD0iMTUwIiBjeT0iMTUwIiByPSI3MCIgZmlsbD0iIzBCMUQzNyIvPjwvc3ZnPg==" alt="Competition Swim Caps - Professional racing swim caps UAE">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">Competition Caps</h3>
-                        <p>High-performance caps for serious swimmers.</p>
+                        <p>High-performance caps for serious swimmers. Designed for competitions and training by athletes in the United Arab Emirates.</p>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMUI0QTc2Ii8+PHBvbHlnb24gcG9pbnRzPSIxNTAsODAgMjIwLDIyMCA4MCwyMjAiIGZpbGw9IiNGRkZGRkYiLz48L3N2Zz4=" alt="Custom Design Caps">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMUI0QTc2Ii8+PHBvbHlnb24gcG9i250cz0iMTUwLDgwIDIyMCwyMjAgODAsMjIwIiBmaWxsPSIjRkZGRkZGIi8+PC9zdmc+" alt="Custom Design Swim Caps - Personalized swimming caps UAE">
                     </div>
                     <div class="product-content">
                         <h3 class="product-title">Custom Designs</h3>
-                        <p>Unique patterns and personalized swim caps.</p>
+                        <p>Unique patterns and personalized swim caps. Create your own design for events, gifts, or personal use in the UAE.</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">The quality of these swim caps is outstanding! Our Dubai swim team has never looked better. The customization process was smooth and the results were perfect.</p>
+                    <p class="testimonial-author">- Ahmed R., Dubai Swim Club</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">We ordered custom caps for our Abu Dhabi competition and they arrived faster than expected. The design was exactly what we wanted and the quality exceeded our expectations.</p>
+                    <p class="testimonial-author">- Sarah L., Abu Dhabi Athletics</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">As a swimming coach in Sharjah, I've tried many suppliers. Streamline offers the best combination of quality, price, and service in the UAE market.</p>
+                    <p class="testimonial-author">- Mohammed K., Sharjah Sharks</p>
                 </div>
             </div>
         </div>
@@ -504,8 +680,36 @@
     <section class="cta-section">
         <div class="container">
             <h2 class="cta-title">Ready to Design Your Swim Caps?</h2>
-            <p class="cta-subtitle">Get in touch with our team to create custom swim caps that represent your brand or team identity.</p>
-            <a href="#" class="cta-button">Start Your Order</a>
+            <p class="cta-subtitle">Get in touch with our team to create custom swim caps that represent your brand or team identity. We serve all across UAE including Dubai, Abu Dhabi, Sharjah, and beyond.</p>
+            <a href="#contact" class="cta-button">Start Your Order</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="features">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" id="name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" id="phone" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Your Message</label>
+                        <textarea id="message" class="form-input form-textarea" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -514,7 +718,7 @@
         <div class="container footer-container">
             <div class="footer-info">
                 <div class="footer-logo">Streamline</div>
-                <p>Premium custom swim caps for teams and individuals across the UAE.</p>
+                <p>Premium custom swim caps for teams and individuals across the UAE. Based in Dubai, serving all Emirates.</p>
                 <div class="social-links">
                     <a href="https://instagram.com/streamline.ae" class="social-link">IG</a>
                     <a href="#" class="social-link">FB</a>
@@ -556,7 +760,7 @@
     <script>
         // Simple animation for elements when they come into view
         document.addEventListener('DOMContentLoaded', function() {
-            const animatedElements = document.querySelectorAll('.feature-card, .product-card');
+            const animatedElements = document.querySelectorAll('.feature-card, .product-card, .testimonial-card');
             
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -572,6 +776,13 @@
                 el.style.transform = 'translateY(20px)';
                 el.dataset.delay = `${index * 0.2}s`;
                 observer.observe(el);
+            });
+            
+            // Form submission
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will contact you shortly.');
+                this.reset();
             });
         });
     </script>
