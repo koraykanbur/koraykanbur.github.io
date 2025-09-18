@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Streamline Custom Swim Caps</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-black: #000000;
+            --color-white: #FFFFFF;
+            --color-navy: #0A1D37;
+            --color-accent: #1E4A76;
+            --color-menu: #142a4e;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 8rem;
+            --border-radius: 4px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--color-black);
+            background-color: var(--color-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--color-menu);
+            padding: var(--spacing-sm) 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-white);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            position: relative;
+            color: var(--color-white);
+            padding: 0.5rem 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-white);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: #4ecdc4;
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+            background-color: #4ecdc4;
+        }
+
+        .cta-button {
+            background-color: var(--color-white);
+            color: var(--color-menu);
+            padding: 0.6rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .cta-button:hover {
+            background-color: var(--color-accent);
+            color: var(--color-white);
+            transform: translateY(-2px);
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: var(--spacing-xl) 0 var(--spacing-lg);
+            background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(245,248,255,1) 100%);
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-navy);
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--color-black);
+        }
+
+        /* Products Section */
+        .products {
+            padding: var(--spacing-xl) 0;
+            background-color: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-lg);
+            color: var(--color-navy);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        .product-card {
+            background-color: var(--color-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            height: 250px;
+            background-color: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--color-accent);
+            color: var(--color-white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .product-content {
+            padding: var(--spacing-md);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-navy);
+        }
+
+        .product-description {
+            margin-bottom: var(--spacing-sm);
+            color: #666;
+            flex-grow: 1;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--spacing-sm);
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: var(--spacing-xs);
+        }
+
+        .product-button {
+            flex: 1;
+            text-align: center;
+            padding: 0.75rem;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .primary-button {
+            background-color: var(--color-navy);
+            color: var(--color-white);
+        }
+
+        .primary-button:hover {
+            background-color: var(--color-accent);
+        }
+
+        .secondary-button {
+            background-color: transparent;
+            border: 1px solid var(--color-navy);
+            color: var(--color-navy);
+        }
+
+        .secondary-button:hover {
+            background-color: var(--color-navy);
+            color: var(--color-white);
+        }
+
+        /* Categories Section */
+        .categories {
+            padding: var(--spacing-xl) 0;
+            background-color: var(--color-white);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        .category-card {
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .category-card:hover {
+            background-color: var(--color-navy);
+            color: var(--color-white);
+            transform: translateY(-5px);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .category-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: var(--spacing-xl) 0;
+            background-color: #f8f9fa;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+        }
+        
+        .testimonial-card {
+            background-color: var(--color-white);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--color-navy);
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            margin-bottom: var(--spacing-sm);
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--color-navy);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: var(--spacing-xl) 0;
+            background-color: var(--color-navy);
+            color: var(--color-white);
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .cta-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-md);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            padding: var(--spacing-lg) 0;
+            background-color: var(--color-black);
+            color: var(--color-white);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-heading {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-links li {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .footer-links a:hover {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--color-navy);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: var(--spacing-lg);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .products-grid,
+            .categories-grid,
+            .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .products-grid,
+            .categories-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+            
+            .nav-menu {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .product-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Streamline</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link active">Products</a></li>
+                    <li><a href="#customization" class="nav-link">Customization</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-button">Order Now</a>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Our Premium Swim Caps</h1>
+            <p class="page-subtitle">Discover our collection of high-quality, customizable swim caps designed for performance and style.</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMUI0QTc2Ii8+PGNpcmNsZSBjeD0iMTUwIiBjeT0iMTUwIiByPSI3MCIgZmlsbD0iI0ZGRkZGRiIvPjwvc3ZnPg==" alt="Team Swim Caps - Custom swim team caps UAE">
+                        <span class="product-badge">Popular</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Team Swim Caps</h3>
+                        <p class="product-description">Custom designed swim caps for teams and clubs. Perfect for creating a unified look during competitions and training sessions.</p>
+                        <div class="product-meta">
+                            <span>Material: Silicone</span>
+                            <span>Delivery: 7-10 days</span>
+                        </div>
+                        <div class="product-price">AED 45.00</div>
+                        <div class="product-actions">
+                            <button class="product-button primary-button">Customize</button>
+                            <button class="product-button secondary-button">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRkZGRkZGIi8+PGNpcmNsZSBjeD0iMTUwIiBjeT0iMTUwIiByPSI3MCIgZmlsbD0iIzBCMUQzNyIvPjwvc3ZnPg==" alt="Competition Swim Caps - Professional racing swim caps UAE">
+                        <span class="product-badge">Premium</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Competition Caps</h3>
+                        <p class="product-description">High-performance swim caps designed for competitive swimmers. Reduced drag and maximum comfort for peak performance.</p>
+                        <div class="product-meta">
+                            <span>Material: Latex</span>
+                            <span>Delivery: 5-7 days</span>
+                        </div>
+                        <div class="product-price">AED 35.00</div>
+                        <div class="product-actions">
+                            <button class="product-button primary-button">Customize</button>
+                            <button class="product-button secondary-button">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMUI0QTc2Ii8+PHBvbHlnb24gcG9pbnRzPSIxNTAsODAgMjIwLDIyMCA4MCwyMjAiIGZpbGw9IiNGRkZGRkYiLz48L3N2Zz4=" alt="Custom Design Swim Caps - Personalized swimming caps UAE">
+                        <span class="product-badge">New</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Custom Designs</h3>
+                        <p class="product-description">Fully personalized swim caps with your unique design, logo, or pattern. Perfect for events, gifts, or personal use.</p>
+                        <div class="product-meta">
+                            <span>Material: Silicone</span>
+                            <span>Delivery: 10-14 days</span>
+                        </div>
+                        <div class="product-price">AED 55.00</div>
+                        <div class="product-actions">
+                            <button class="product-button primary-button">Customize</button>
+                            <button class="product-button secondary-button">Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Product Categories</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">🏊‍♂️</div>
+                    <h3 class="category-title">Team Caps</h3>
+                    <p>Custom designs for swim teams and clubs</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">⚡</div>
+                    <h3 class="category-title">Competition Caps</h3>
+                    <p>High-performance caps for serious swimmers</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🎨</div>
+                    <h3 class="category-title">Custom Designs</h3>
+                    <p>Unique patterns and personalized swim caps</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">The quality of these swim caps is outstanding! Our Dubai swim team has never looked better. The customization process was smooth and the results were perfect.</p>
+                    <p class="testimonial-author">- Ahmed R., Dubai Swim Club</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">We ordered custom caps for our Abu Dhabi competition and they arrived faster than expected. The design was exactly what we wanted and the quality exceeded our expectations.</p>
+                    <p class="testimonial-author">- Sarah L., Abu Dhabi Athletics</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">As a swimming coach in Sharjah, I've tried many suppliers. Streamline offers the best combination of quality, price, and service in the UAE market.</p>
+                    <p class="testimonial-author">- Mohammed K., Sharjah Sharks</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Design Your Swim Caps?</h2>
+            <p class="cta-subtitle">Get in touch with our team to create custom swim caps that represent your brand or team identity. We serve all across UAE including Dubai, Abu Dhabi, Sharjah, and beyond.</p>
+            <a href="#contact" class="cta-button">Start Your Order</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-info">
+                <div class="footer-logo">Streamline</div>
+                <p>Premium custom swim caps for teams and individuals across the UAE. Based in Dubai, serving all Emirates.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/streamline.ae" class="social-link">IG</a>
+                    <a href="#" class="social-link">FB</a>
+                    <a href="#" class="social-link">TW</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3 class="footer-heading">Products</h3>
+                <ul>
+                    <li><a href="#">Team Caps</a></li>
+                    <li><a href="#">Competition Caps</a></li>
+                    <li><a href="#">Custom Designs</a></li>
+                    <li><a href="#">Accessories</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3 class="footer-heading">Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3 class="footer-heading">Contact</h3>
+                <ul>
+                    <li>Dubai, UAE</li>
+                    <li>info@streamline.ae</li>
+                    <li>+971 4 123 4567</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container copyright">
+            <p>&copy; 2023 Streamline. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation for elements when they come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.product-card, .category-card, .testimonial-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                el.style.transitionDelay = `${index * 0.1}s`;
+                observer.observe(el);
+            });
+            
+            // Add to cart functionality
+            document.querySelectorAll('.primary-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    alert('Product customization option selected!');
+                });
+            });
+            
+            // Details button functionality
+            document.querySelectorAll('.secondary-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    alert('Product details would be shown here.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
